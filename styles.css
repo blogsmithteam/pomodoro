@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Merriweather+Sans:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Merriweather Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('https://images.unsplash.com/photo-1611051062214-8ad9c67fab76');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 3rem;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid #1B178D;
+}
+
+h1 {
+    font-family: 'Special Elite', cursive;
+    color: #1B178D;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.timer {
+    font-family: 'Special Elite', cursive;
+    font-size: 6rem;
+    font-weight: 400;
+    margin: 2rem 0;
+    color: #1B178D;
+    font-variant-numeric: tabular-nums;
+}
+
+.controls button {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background-color: #1B178D;
+    color: white;
+    border: 2px solid #1B178D;
+    border-radius: 2px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.controls button:hover {
+    background-color: #ccccff;
+    color: #1B178D;
+}
+
+#pause {
+    background-color: #ccccff;
+    color: #1B178D;
+    border: 2px solid #1B178D;
+}
+
+#pause:hover {
+    background-color: #1B178D;
+    color: white;
+}
+
+#reset {
+    background-color: #ccccff;
+    color: #1B178D;
+    border: 2px solid #1B178D;
+}
+
+#reset:hover {
+    background-color: #1B178D;
+    color: white;
+}
+
+.status {
+    font-family: 'Merriweather Sans', sans-serif;
+    margin: -0.5rem 0 2rem 0;
+    font-size: 1rem;
+    color: #1B178D;
+    font-weight: 300;
+}
+
+.mode-toggle {
+    margin: 1.5rem 0;
+}
+
+.mode-button {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: #ccccff;
+    color: #1B178D;
+    border: 2px solid #1B178D;
+    border-radius: 2px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mode-button:hover {
+    background-color: #1B178D;
+    color: white;
+} 
