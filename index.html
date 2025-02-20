@@ -9,6 +9,14 @@
 </head>
 <body>
     <div class="container">
+        <div id="focusModal" class="modal">
+            <div class="modal-content">
+                <h2>Set Your Focus</h2>
+                <p>What would you like to focus on during this session?</p>
+                <input type="text" id="focusInput" placeholder="Enter your focus intention...">
+                <button id="setFocus">Set Focus</button>
+            </div>
+        </div>
         <div class="mode-toggle">
             <span class="mode-label">Mode:</span>
             <button id="modeToggle" class="mode-button" aria-label="Toggle work/rest mode">
@@ -16,6 +24,7 @@
             </button>
         </div>
         <h1>Pomodoro Timer</h1>
+        <p id="focusDisplay" class="focus-text"></p>
         <div class="status">
             <p id="pomodoroCount" class="count-display">Daily Pomodoros: 0</p>
         </div>
@@ -23,8 +32,9 @@
             <span id="minutes">25</span>:<span id="seconds">00</span>
         </div>
         <div class="controls">
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
+            <button id="start" aria-label="Start timer"><i class="fas fa-play"></i></button>
+            <button id="pause" aria-label="Pause timer"><i class="fas fa-pause"></i></button>
+            <button id="addFive">+ 5</button>
             <button id="reset">Reset</button>
         </div>
     </div>

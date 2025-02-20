@@ -8,6 +8,11 @@ const modeToggle = document.getElementById('modeToggle');
 const statusDisplay = document.getElementById('currentStatus');
 const pomodoroCount = document.getElementById('pomodoroCount');
 const modeIcon = modeToggle.querySelector('i');
+const addFiveButton = document.getElementById('addFive');
+const focusModal = document.getElementById('focusModal');
+const focusInput = document.getElementById('focusInput');
+const setFocusButton = document.getElementById('setFocus');
+const focusDisplay = document.getElementById('focusDisplay');
 
 // Initialize variables
 let isWorkTime = true;
@@ -41,7 +46,16 @@ function updateDisplay() {
 
 function startTimer() {
     if (timerInterval === null) {
-        // Increment pomodoro count only when starting a work session
+        if (isWorkTime && !focusDisplay.textContent) {  // Only show modal if no focus is set
+            focusModal.style.display = 'flex';
+            return;
+        }
+        startTimerExecution();
+    }
+}
+
+function startTimerExecution() {
+    if (timerInterval === null) {
         if (isWorkTime) {
             dailyPomodoros++;
             localStorage.setItem('pomodoroCount', dailyPomodoros.toString());
@@ -71,6 +85,9 @@ function resetTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
     timeLeft = isWorkTime ? 25 * 60 : 5 * 60;
+    if (isWorkTime) {
+        focusDisplay.textContent = '';  // Clear focus text on reset during work mode
+    }
     updateDisplay();
 }
 
@@ -81,15 +98,20 @@ function updateStatus() {
 function toggleMode() {
     isWorkTime = !isWorkTime;
     timeLeft = isWorkTime ? 25 * 60 : 5 * 60;
+    if (!isWorkTime) {
+        focusDisplay.textContent = '';
+    }
     updateStatus();
-    
     modeIcon.className = isWorkTime ? 'fas fa-sun' : 'fas fa-moon';
-    
-    modeToggle.setAttribute('aria-label', 
-        isWorkTime ? 'Switch to rest mode' : 'Switch to work mode'
-    );
-    
     updateDisplay();
+}
+
+function addFiveMinutes() {
+    // Only allow adding time during work mode
+    if (isWorkTime) {
+        timeLeft += 5 * 60; // Add 5 minutes in seconds
+        updateDisplay();
+    }
 }
 
 // Add event listeners
@@ -97,6 +119,28 @@ startButton.addEventListener('click', startTimer);
 pauseButton.addEventListener('click', pauseTimer);
 resetButton.addEventListener('click', resetTimer);
 modeToggle.addEventListener('click', toggleMode);
+addFiveButton.addEventListener('click', addFiveMinutes);
+
+// Add event listeners for the modal
+setFocusButton.addEventListener('click', () => {
+    const focusText = focusInput.value.trim();
+    if (focusText) {
+        focusDisplay.textContent = `Focus: ${focusText}`;
+    } else {
+        focusDisplay.textContent = '';
+    }
+    focusModal.style.display = 'none';
+    focusInput.value = '';
+    startTimerExecution();
+});
+
+// Close modal when clicking outside
+focusModal.addEventListener('click', (e) => {
+    if (e.target === focusModal) {
+        focusModal.style.display = 'none';
+        startTimerExecution();
+    }
+});
 
 // Initialize display
 updateStatus(); 

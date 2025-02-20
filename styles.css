@@ -68,6 +68,7 @@ h1 {
     background-color: #ccccff;
     color: #1B178D;
     border: 2px solid #1B178D;
+    padding: 0.75rem 1rem;
 }
 
 #pause:hover {
@@ -84,6 +85,34 @@ h1 {
 #reset:hover {
     background-color: #1B178D;
     color: white;
+}
+
+#addFive {
+    background-color: #ccccff;
+    color: #1B178D;
+    border: 2px solid #1B178D;
+}
+
+#addFive:hover {
+    background-color: #1B178D;
+    color: white;
+}
+
+#start {
+    background-color: #ccccff;
+    color: #1B178D;
+    border: 2px solid #1B178D;
+    padding: 0.75rem 1rem;
+}
+
+#start:hover {
+    background-color: #1B178D;
+    color: white;
+}
+
+#start i {
+    font-size: 1rem;
+    line-height: 1;
 }
 
 .status {
@@ -137,4 +166,95 @@ h1 {
 .mode-button:hover {
     background-color: rgba(204, 204, 255, 0.5);
     color: #1B178D;
+}
+
+#pause i {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 23, 141, 0.2);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 2rem 3rem;
+    border-radius: 2px;
+    border: 2px solid #1B178D;
+    max-width: 350px;
+    width: 80%;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+.modal-content h2 {
+    font-family: 'Special Elite', cursive;
+    color: #1B178D;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content p {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #1B178D;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 1.5rem 0;
+    border: 2px solid #1B178D;
+    border-radius: 2px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.modal-content button {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background-color: #1B178D;
+    color: white;
+    border: 2px solid #1B178D;
+    border-radius: 2px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-content button:hover {
+    background-color: #ccccff;
+    color: #1B178D;
+}
+
+.focus-text {
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #1B178D;
+    font-size: 1.1rem;
+    margin: -1rem 0 1rem 0;
+    background-color: rgba(204, 204, 255, 0.3);
+    border: 2px solid #1B178D;
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+.focus-text:empty {
+    display: none;
 } 
