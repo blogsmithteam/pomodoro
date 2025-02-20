@@ -7,7 +7,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-image: url('../max-van-den-oetelaar-uymG7UVPXpI-unsplash.jpg');
+    background-image: url('./background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
