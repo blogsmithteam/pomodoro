@@ -126,6 +126,7 @@ setFocusButton.addEventListener('click', () => {
     const focusText = focusInput.value.trim();
     if (focusText) {
         focusDisplay.textContent = `Focus: ${focusText}`;
+        focusDisplay.style.marginTop = '10px'; // Add some spacing
     } else {
         focusDisplay.textContent = '';
     }
@@ -134,11 +135,13 @@ setFocusButton.addEventListener('click', () => {
     startTimerExecution();
 });
 
-// Close modal when clicking outside
+// Enhance modal close behavior
 focusModal.addEventListener('click', (e) => {
     if (e.target === focusModal) {
         focusModal.style.display = 'none';
-        startTimerExecution();
+        if (!focusDisplay.textContent) {  // Only start if no focus is set
+            startTimerExecution();
+        }
     }
 });
 
