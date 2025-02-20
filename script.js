@@ -28,8 +28,15 @@ if (lastPomodoroDate !== today) {
 function updateDisplay() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
+    const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+    // Update the display elements
     minutesDisplay.textContent = minutes.toString().padStart(2, '0');
     secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+    
+    // Update the page title
+    const mode = isWorkTime ? 'Work' : 'Break';
+    document.title = `(${timeString}) ${mode} - Pomodoro Timer`;
 }
 
 function startTimer() {
