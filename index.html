@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
+        <div class="mode-toggle">
+            <span class="mode-label">Mode:</span>
+            <button id="modeToggle" class="mode-button" aria-label="Toggle work/rest mode">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
         <h1>Pomodoro Timer</h1>
         <div class="status">
-            <p id="currentStatus">Current Mode: Work Time</p>
+            <p id="pomodoroCount" class="count-display">Daily Pomodoros: 0</p>
         </div>
         <div class="timer">
             <span id="minutes">25</span>:<span id="seconds">00</span>
@@ -19,9 +26,6 @@
             <button id="start">Start</button>
             <button id="pause">Pause</button>
             <button id="reset">Reset</button>
-        </div>
-        <div class="mode-toggle">
-            <button id="modeToggle" class="mode-button">Switch to Rest</button>
         </div>
     </div>
     <script src="script.js"></script>
